@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # wait-for-postgres.sh
 
 if [ ! -f ./manage.py ]; then
