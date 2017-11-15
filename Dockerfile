@@ -4,7 +4,7 @@ MAINTAINER Antti Rummukainen
 
 VOLUME ["/opt/app"]
 WORKDIR /opt/app
-COPY . .
+COPY requirements.txt .
 
 RUN apk update && \
 	apk --no-cache add --virtual build-deps \
@@ -26,3 +26,5 @@ COPY docker/wait-for-postgres.sh /wait-for-postgres.sh
 
 # Copy modified settings.py template which has django-environ bits set
 COPY docker/django/project_template/ /usr/local/lib/python3.5/site-packages/django/conf/project_template/
+
+COPY . .
